@@ -1,0 +1,56 @@
+﻿@model IEnumerable<ToDo.Data.Models.TaskDetails>
+
+@{
+    ViewBag.Title = "Task";
+}
+
+<div class="jumbotron" style="background-color:white">
+    <div class="card">
+        <div class="card-header">
+            <h2 style="color:forestgreen"><i class="fa fa-eye fa-fw"></i>Task List</h2>
+        </div>
+        <div class="card-body">
+            <table class="table">
+                <tr>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Status)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Title)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Description)
+                    </th>
+                    <th></th>
+                </tr>
+
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Status)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Title)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Description)
+                        </td>
+                        <td>
+                            @Html.ActionLink("View Task", "ViewTask", new { id = item.TaskId }) |
+                            @Html.ActionLink("Update", "EditTask", new { id = item.TaskId }) |
+                            @Html.ActionLink("Delete", "Delete", new { id = item.TaskId })
+                        </td>
+                    </tr>
+                }
+
+            </table>
+            <div>
+                @Html.ActionLink("Create Task", "CreateTask", routeValues: null, htmlAttributes: new { @class = "btn btn-outline-success", @role = "button" }) |
+                @Html.ActionLink("Back", "Index")
+            </div>
+        </div>
+    </div>
+</div>
+
+

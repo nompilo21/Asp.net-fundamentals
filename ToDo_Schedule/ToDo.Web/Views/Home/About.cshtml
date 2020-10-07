@@ -1,0 +1,24 @@
+﻿@{
+    ViewBag.Title = "About";
+}
+
+<body>
+    <h1>How to manage your time by creating tasks</h1>
+    <p>The following video provides an introduction to your To-do Application:</p>
+    <div class="jumbotron" style="background-color:azure">
+        <div class="card mx-auto" style="width: 50rem;">
+            <div class="embed-responsive embed-responsive-21by9">
+                <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/ibGnjSKLqTc"></iframe>
+            </div>
+        </div>
+    </div>
+    
+    @*<div class="embed-responsive embed-responsive-16by9">
+            <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/ibGnjSKLqTc" allowfullscreen></iframe>
+        </div>*@
+</body>
+<p>Create your task today</p>
+
+@Html.ActionLink("Create Task", "CreateTask", routeValues: null, htmlAttributes: new { @class = "btn btn-outline-success", @role = "button" }) |
+@Html.ActionLink("Go Back", "Index")
+
