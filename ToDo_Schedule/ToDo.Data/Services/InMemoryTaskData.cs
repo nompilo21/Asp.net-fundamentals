@@ -70,6 +70,11 @@ namespace ToDo.Data.Services
             throw new NotImplementedException();
         }
 
+        public IEnumerable<TaskDetails> GetTaskSearch(string title)
+        {
+            throw new NotImplementedException();
+        }
+
         //public void Update(TaskDetails task) => throw new NotImplementedException();
     }
 }

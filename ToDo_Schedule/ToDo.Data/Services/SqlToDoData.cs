@@ -58,10 +58,11 @@ namespace ToDo.Data.Services
             db.SaveChanges();
         }
         //search method
-        public IEnumerable<TaskDetails> GetTaskSearch(string title)
+        public IEnumerable<TaskDetails> GetTaskSearch(string title=null)
         {
             return from r in db.Tasks
-                   orderby r.TaskId
+                   where string.IsNullOrEmpty(title) || r.Title.StartsWith(title)
+                   orderby r.Title
                    select r;
         }
     }
