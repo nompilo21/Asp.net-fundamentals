@@ -129,7 +129,7 @@ namespace ToDo.Web.Controllers
             db.Delete(id);
             TempData["Message"] = "You have successfully deleted your task";
             return RedirectToAction("Task");
-        }
+        }      
 
     }
 }
