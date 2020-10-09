@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore.Metadata.Internal;
+﻿using MailKit.Search;
+using Microsoft.EntityFrameworkCore.Metadata.Internal;
 using System.Threading.Tasks;
 using System.Web.Mvc;
 using ToDo.Data.Models;
@@ -129,7 +130,13 @@ namespace ToDo.Web.Controllers
             db.Delete(id);
             TempData["Message"] = "You have successfully deleted your task";
             return RedirectToAction("Task");
-        }      
+        }
+        
+        public ActionResult Search(string searchTerm)
+        {
+            var term = db.GetTaskSearch(searchTerm);
+            return View(term);
+        }
 
     }
 }

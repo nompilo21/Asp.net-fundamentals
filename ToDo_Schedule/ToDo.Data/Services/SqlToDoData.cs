@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.AspNetCore.Mvc;
+using System;
 using System.Collections.Generic;
 using System.Data.Entity;
 using System.Dynamic;
@@ -58,12 +59,14 @@ namespace ToDo.Data.Services
             db.SaveChanges();
         }
         //search method
-        public IEnumerable<TaskDetails> GetTaskSearch(string title=null)
+        public IEnumerable<TaskDetails> GetTaskSearch(string title)
         {
             return from r in db.Tasks
                    where string.IsNullOrEmpty(title) || r.Title.StartsWith(title)
                    orderby r.Title
                    select r;
         }
+
+
     }
 }

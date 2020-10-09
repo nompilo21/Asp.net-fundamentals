@@ -7,7 +7,7 @@
 <div class="jumbotron" style="background-color:white">
 <div class="card">
     <div class="card-header" style="background-color:dodgerblue">
-        <h1 style="color:white">Details for @Html.DisplayFor(model => model.Title)</h1>
+        <h1 style="color:white"><i class="fa fa-book"></i>Details for @Html.DisplayFor(model => model.Title)</h1>
     </div>
     <div class="card-body">
         <hr />
@@ -51,10 +51,8 @@
 
         </dl>
         <div>
-            <i class="fa fa-pencil" style="color:dodgerblue">
-            @Html.ActionLink("Edit Task", "EditTask", new { id=Model.TaskId}) |
+            @Html.ActionLink("Edit Task", "EditTask", new { id=Model.TaskId})|
             @Html.ActionLink("Back", "Task")
-            </i>
         </div>
     </div>
     </div>

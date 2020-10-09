@@ -19,7 +19,6 @@ namespace ToDo.Web
                 name: "DefaultApi",
 
                 // /api/tasks
-
                 routeTemplate: "api/{controller}/{id}",
                 defaults: new { id = RouteParameter.Optional }
             );
